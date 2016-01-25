@@ -1,18 +1,14 @@
-![S-Update Logo](http://image.noelshack.com/fichiers/2015/18/1430286335-bannieresu.png)
+# JavaMurmur
 
-## How to use it
-
-First you need to install the [Server](http://github.com/TheShark34/S-Update-Server) on a Web Server.
-Then, in your code, just insert that to update your program !
+Simple Murmur 3 Java library.
+You can create your Hashing entries, current are : File, String or Byte Array.
 
 ```java
-SUpdate su = new SUpdate("UrlOfTheServer", new File("OutputFolder"));
-su.update();
+MurmurHasher hasher = new StringMurmurHasher();
+Hash hash = hasher.hash("Hello !");
+
+System.out.println("Base 32 string hash : " + hash.toString());
+System.out.println("Raw hash            : " + hash.toInt());
 ```
 
-## Features
-
-* Files checking with last modified dates or MD5s
-* Unknown files are deleted excepted the one listed in the server ignore file
-* Modified files are re-downloaded
-* Zips files for those that need not to be checked
+You can remplace StringMurmurHasher by BytesMurmurHasher or FileMurmurHasher.
