@@ -1,0 +1,21 @@
+apply plugin: 'java'
+
+group = 'fr.litarvan.javamurmur'
+version = '1.0.0'
+archivesBaseName = 'javamurmur'
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+jar {
+    from "LICENSE"
+    from "LICENSE.LESSER"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
